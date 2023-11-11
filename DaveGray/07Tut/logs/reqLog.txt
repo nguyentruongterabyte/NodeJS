@@ -1,0 +1,3 @@
+20231111 02:18:22	fafd507c-c275-4ea0-a0de-b095590c5376	GET	undefined	/new-page.html
+20231111 02:18:22	625562f6-294f-4b5d-945e-6a9d1e2b80da	GET	undefined	/img/img1.jpg
+20231111 02:18:22	71e51710-7150-4d12-88f3-0023cac70bfc	GET	undefined	/css/styles.css
