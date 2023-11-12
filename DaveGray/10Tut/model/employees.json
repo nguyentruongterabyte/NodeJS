@@ -1,17 +1,1 @@
-[
-  {
-    "id": 1,
-    "firstname": "Truong",
-    "lastname": "Nguyen"
-  },
-  {
-    "id": 2,
-    "firstname": "Thuy",
-    "lastname": "Nguyen"
-  },
-  {
-    "id": 3,
-    "firstname": "My",
-    "lastname": "Lam"
-  }
-]
+[{"id":1,"firstname":"Truong","lastname":"Nguyen"},{"id":2,"firstname":"Thuy","lastname":"Nguyen"},{"id":3,"firstname":"My","lastname":"Lam"},{"id":5,"firstname":"Thuong","lastname":"Nguyen"}]
