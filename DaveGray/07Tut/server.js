@@ -34,8 +34,6 @@ app.use( express.json() );
 // serve static files
 app.use( express.static( path.join( __dirname, '/public' ) ) );
 
-
-
 app.get( '^/$|/index(.html)?', ( req, res ) => {
   res.sendFile( path.join( __dirname, 'views', 'index.html' ) );
 } );
