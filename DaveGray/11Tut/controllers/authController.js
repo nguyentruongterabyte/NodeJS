@@ -12,7 +12,7 @@ const path = require( 'path' );
 
 const handleLogin = async ( req, res ) => { 
   const { user, pwd } = req.body;
-  if ( !user || !pwd ) return res.status( 400 ).json( { 'message': 'Please provide user and password'})
+  if ( !user || !pwd ) return res.sendStatus( 400 ).json( { 'message': 'Please provide user and password'})
   const foundUser = usersDB.users.find( person => person.username === user );
   if ( !foundUser ) return res.sendStatus( 401 ); // Unauthorized
   // evaluate password
@@ -37,7 +37,7 @@ const handleLogin = async ( req, res ) => {
       path.join( __dirname, '..', 'model', 'users.json' ),
       JSON.stringify( usersDB.users )
     );
-    res.cookie('jwt', refreshToken, { maxAge: 24 * 60 * 60 * 1000, httpOnly: true })
+    res.cookie('jwt', refreshToken, { maxAge: 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'None', secure: true })
     res.json( {accessToken} )
   } else {
     res.sendStatus( 401 ); // Unauthorized
