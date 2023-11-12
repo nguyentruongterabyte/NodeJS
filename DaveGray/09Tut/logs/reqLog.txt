@@ -156,3 +156,11 @@
 20231112 04:48:34	ea332879-ac60-4598-ac61-1019b84e5a30	GET	undefined	/employees
 20231112 04:48:50	c0bb982a-e308-4312-82cc-235c9c9b4bc2	POST	undefined	/employees
 20231112 04:48:57	526d4651-ca87-43e2-a357-ec2f4336c07d	GET	undefined	/employees
+20231112 04:50:05	4b3140a5-679e-4226-8daa-79db90eede5d	GET	undefined	/employees
+20231112 04:50:06	53f9a5df-a85b-4590-9c56-51441c159571	GET	undefined	/employees
+20231112 04:50:08	e7fdbec8-eae8-4279-86c3-40f004cdb2ec	GET	undefined	/employees
+20231112 04:50:09	61bcb882-269c-428e-ae42-1f185acf491a	GET	undefined	/employees
+20231112 04:50:28	803ba510-99f2-424c-8211-ab91447eb156	GET	undefined	/employees
+20231112 04:50:30	d0afaa4d-3541-495f-9eaa-c7a8eaa90afa	GET	undefined	/employees
+20231112 04:50:32	3323e0f6-5dcc-4036-b85b-25de90f77fc0	GET	undefined	/employees
+20231112 04:50:47	4b788ec9-517e-4afb-b823-ca0c4921a116	GET	undefined	/employees/1
