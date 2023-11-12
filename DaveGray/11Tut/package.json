@@ -1,7 +1,7 @@
 {
   "name": "10tut",
   "version": "1.0.0",
-  "description": "Express tutorial, JWT Authentication",
+  "description": "Express tutorial, JWT Authentication, add REFRESH_TOKEN_SECRET and ACCESS_TOKEN_SECRET into .env: terminal -> require('crypto').randomBytes(64).toString('hex')",
   "main": "server.js",
   "scripts": {
     "start": "node server",
