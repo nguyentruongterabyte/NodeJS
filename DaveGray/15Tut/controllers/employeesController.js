@@ -1,34 +1,38 @@
-const fsPromises = require( 'fs' ).promises;
-const path = require('path');
-const data = {
-  employees: require( '../model/employees.json' ),
-  setEmployees: function ( data ) { this.employees = data },
-}
+const Employee = require('../model/Employee');
 
-const getAllEmployees = ( req, res ) => {
-  res.json( data.employees );
+const getAllEmployees = async( req, res ) => {
+  const employees = await Employee.find();
+  if ( !employees ) return res.sendStatus( 204 ).json( { 'message': 'No employees found.' } );
+  res.json( employees );
 }
 
 const createNewEmployee = async( req, res ) => { 
-  const newEmployee = {
-    id: data.employees?.length ? data.employees[ data.employees.length - 1 ].id + 1 : 1,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname
+
+  if ( !req?.body?.firstname || !req?.body?.lastname ) {
+    return res.status( 400 ).json( { 'message': 'First and last names are required.' } );
   }
 
-  if ( !newEmployee.firstname || !newEmployee.lastname ) { 
-    return res.status(400).json({'message': 'First and last names are required.'})
-  }
+  try {
+    const result = await Employee.create( {
+      firstname: req.body.firstname,
+      lastname: req.body.lastname
+    } );
 
-  data.setEmployees( [ ...data.employees, newEmployee ] );
-  await fsPromises.writeFile( path.join( __dirname, '..', 'model', 'employees.json' ), JSON.stringify( data.employees ) );
-  res.status(201).json( data.employees );
+    res.sentStatus(201).json( result );
+  }
+  catch ( err ) {
+    console.log( err );
+  }
 }
 
-const updateEmployee = async( req, res ) => {
-  const employee = data.employees.find( emp => emp.id === parseInt( req.body.id ) );
+const updateEmployee = async ( req, res ) => {
+  if ( !req?.body?.id ) {
+    return res.sentStatus( 400 ).json({'message': 'ID parameter is required.' } );
+  }
+
+  const employee = await Employee.findOne;
   if ( !employee ) {
-    return res.status( 400 ).json( { 'message': `Employee ID ${ req.body.id } not found.` } );
+    return res.sendStatus( 400 ).json( { 'message': `Employee ID ${ req.body.id } not found.` } );
   }
   if ( req.body.firstname ) employee.firstname = req.body.firstname;
   if ( req.body.lastname ) employee.lastname = req.body.lastname;
