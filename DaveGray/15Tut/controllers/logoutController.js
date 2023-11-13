@@ -4,7 +4,7 @@ const handleLogout = async ( req, res ) => {
   // On client, also delete the access token
 
   const cookies = req.cookies;
-  if ( !cookies?.jwt ) return res.sendStatus( 204 ); // No content
+  if ( !cookies?.jwt ) return res.status( 204 ); // No content
 
   const refreshToken = cookies.jwt;
 
@@ -12,7 +12,7 @@ const handleLogout = async ( req, res ) => {
   const foundUser = await User.findOne( { refreshToken } ).exec();;
   if ( !foundUser ) {
     res.clearCookie( 'jwt', { maxAge: 24 * 60 * 60 * 1000, httpOnly: true, secure: true } );
-    return res.sendStatus( 204 );
+    return res.status( 204 );
   }
   
   // Delete refresh token in db
