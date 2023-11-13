@@ -1,7 +1,7 @@
 {
-  "name": "13tut",
+  "name": "14tut",
   "version": "1.0.0",
-  "description": "Express tutorial,13Tut, Intro to MongoDB and Mongoose, Express Authorization Tutorial, add REFRESH_TOKEN_SECRET and ACCESS_TOKEN_SECRET into .env: terminal -> require('crypto').randomBytes(64).toString('hex'), .env: DATABASE_URI",
+  "description": "Express tutorial,14Tut, How to create MongoDB Schemas and Data Models, Express Authorization Tutorial, add REFRESH_TOKEN_SECRET and ACCESS_TOKEN_SECRET into .env: terminal -> require('crypto').randomBytes(64).toString('hex'), .env: DATABASE_URI",
   "main": "server.js",
   "scripts": {
     "start": "node server",
