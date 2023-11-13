@@ -1,0 +1,2 @@
+20231112 01:47:22	5c462b01-6a62-41cd-9958-6275ae9a5792	Error: Not allowed by CORS
+20231112 03:12:42	9060f664-e76d-440a-9ea7-943c403140b4	SyntaxError: Expected ',' or '}' after property value in JSON at position 14
