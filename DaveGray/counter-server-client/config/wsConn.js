@@ -10,6 +10,9 @@ const connectWebsocket = ( io, sum ) => {
       io.emit( 'received', sum );
       console.log( sum );
     } );
+    socket.on('subscribe', (data) => {
+      console.log(data.id, data.fullName);
+    })
   } );
   return sum;
 }

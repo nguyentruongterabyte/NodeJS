@@ -14,6 +14,7 @@ const corsOptions = require( './config/corOptions' );
 const credentials = require( './middleware/credentials' );
 const connectDB = require( './config/dbConn' );
 const { connectWebsocket } = require( './config/wsConn' );
+const verifyJWT = require( './middleware/verifyJWT' );
 
 const PORT = process.env.PORT || 8080;
 const WS_PORT = process.env.WS_PORT || 3500;
@@ -42,7 +43,9 @@ app.use( express.json() );
 app.use( cookieParser() );
 
 // routes
-app.use( '/auth', require( './routes/auth' ));
+app.use( '/auth', require( './routes/auth' ) );
+app.use( '/register', require( './routes/register' ) );
+app.use( '/change-password', require( './routes/changePassword' ) );
 
 app.use( errorHandler );
 // Websocket server
